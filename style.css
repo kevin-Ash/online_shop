@@ -30,3 +30,6 @@ li {
     width: 6rem;
     height: 6rem;
 }
+.toggler-icon {
+    outline: none !important;
+}
