@@ -1,20 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700&family=Raleway:wght@200&family=Taviraj&display=swap');
+/* 
+DOC Reset
+*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
+/* 
+Variables
+*/
 :root {
     --h1Font: 'Fira Sans', sans-serif;
     --h2Font: 'Raleway', sans-serif;
     --pFont: 'Taviraj', serif;
     --mainGrey: #302b27;
     --mainWhite: #f5f3f5;
-    --neonGreen: #c6f91f;
+    --mainLime: #c6f91f;
+    /*
+    Get RGB values for opacity
+    */
+    --mainYellow: #DDF45B;
+    --mainRed: #c17767;
+    --mainYellowOverlay:rgba(221, 244, 91, 0.2);
+    --mainRedOverlay: rgba(193, 119, 103, 0.4);
+    --mainTransition: all 0.35s linear;
+}
+
+/* 
+Custom DOM Element
+*/
+body {
+    color: var(--mainGrey)!important;
 }
 h1 {
     font-family: var(--h1Font);
+    text-shadow: 0 0 3px var(--mainGrey), 0 0 5px var(--mainGrey);
 }
 h2 {
     font-family: var(--h2Font);
@@ -25,11 +46,122 @@ a, p {
 li {
     list-style-type: none;
 }
-
-.navbar-brand img {
-    width: 6rem;
-    height: 6rem;
+.btn-red {
+    color: var(--mainRed)!important;
+    border-color: var(--mainRed)!important;
 }
-.toggler-icon {
+.btn-red:hover {
+    color: var(--mainWhite) !important;
+    background-color: var(--mainRed)!important;
+}
+.btn-black {
+    color: var(--mainGrey)!important;
+    border-color: var(--mainGrey)!important;
+}
+.btn-black:hover {
+    color: var(--mainWhite) !important;
+    background-color: var(--mainGrey)!important;
+}
+
+/* 
+Main Navigation 
+*/
+nav {
+    border-bottom: 0.15rem solid var(--mainLime);
+}
+.navbar-brand img {
+    width: 3.75rem;
+    height: 3.75rem;
+}
+.nav-link {
+    color: var(--mainGrey);
+    transition: var(--mainTransition);
+    font-size: 1.15rem;
+}
+.nav-link:hover {
+    color: var(--mainRed);
+}
+/* Main Navigation - Phone Info */
+.nav-info {
+    font-size: 1.15rem;
+}
+/* Main Navigation - Cart Info */
+#cart-info {
+    cursor: pointer;
+    border: 0.15rem solid var(--mainGrey);
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.25rem;
+    font-size: 1.15rem;
+    transition: var(--mainTransition);
+    color: var(--mainGrey);
+}
+#cart-info:hover {
+    background-color: var(--mainRed);
+    border-color: var(--mainRed);
+    color: var(--mainWhite);
+}
+
+/* 
+Hamburger Toggle
+*/
+.navbar-toggler {
     outline: none !important;
+}
+.navbar-toggler-icon {
+    font-size: 2.25rem;
+}
+
+/* 
+Banner Section
+*/
+.banner {
+    min-height: calc(100vh - 87px);
+    background:
+    linear-gradient(var(--mainRedOverlay), var(--mainRedOverlay)),
+    url('./imgs/display-img/rice-hero.jpg')
+    center/cover
+    no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+.banner-info {
+    color: var(--mainWhite);
+}
+.banner-title{
+    color: var(--mainLime);
+    font-size: 4.25rem;
+}
+.banner-info>.banner-link {
+    color: var(--mainGrey);
+    border: 0.15rem solid var(--mainGrey);
+    font-size: 1.2rem;
+    background: var(--mainWhite) ;
+    transition: var(--mainTransition);
+}
+.banner-info>.banner-link:hover {
+    color: var(--mainWhite);
+    background: var(--mainGrey);
+}
+
+/* 
+About Section
+*/
+
+.about-img-container {
+    position: relative;
+}
+.about-img-container::before {
+    content: '';
+    position: absolute;
+    top: -1.5rem;
+    left: -1.75rem;
+    outline: 0.5rem solid var(--mainYellow);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: all 0.5s ease-in-out;    
+}
+.about-img-container:hover::before {
+    top: 0;
+    left: 0;
 }

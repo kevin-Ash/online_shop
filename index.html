@@ -7,28 +7,31 @@
     <!-- Custom CSS -->    
     <link rel="stylesheet" href="style.css">
     <!-- jQuery CDN -->
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script defer src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <!-- Font Awesome CDN -->
     <script src="https://kit.fontawesome.com/d027480c9c.js" crossorigin="anonymous" defer></script>    
 </head>
 <body>
     <header id="main-header">
+        
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg px-4">
             <!-- Brand Logo -->
             <a href="#main-header" class="navbar-brand"> 
-                <img src="./imgs/icons/rice-icon.svg" class="img-responsive" alt="main logo"/>    
+                <img src="./imgs/icons/rice-icon.svg" class="img-fluid" alt="main logo"/>
             </a>
+           
              <!-- Hamburger Toggle Button-->
             <button class="navbar-toggler" data-toggle="collapse" data-target="#main-navigation">
-                <span class="navbar-toggler-area">
+                <span class="navbar-toggler-icon d-flex align-items-center justify-content-center">
                     <i class="fas fa-bars"></i>
                 </span>
             </button>
+            
             <!-- Main Navigation Links-->
             <div class="collapse navbar-collapse" id="main-navigation">
                 <ul class="navbar-nav text-capitalize mx-auto">
@@ -45,32 +48,70 @@
                         <a href="#contact" class="nav-link">contact</a>
                     </li>
                 </ul>
-            <!-- Info Items in Nav -->
+
+                <!-- Info Items in Nav -->
                 <div class="nav-main-info d-none d-lg-flex">
-                    <!-- single item-->
-                    <div class="nav-info align-items-center d-flex justify-content-between max-lg-5">
+                    <!-- single item--> <!-- Phone Number -->
+                    <div class="nav-info align-items-center d-flex justify-content-between mx-lg-5">
                         <span class="info-icon mx-lg-3">
                             <i class="fas fa-phone"></i>
                         </span>
                         <p class="mb-0">+ 012345 67890</p>
                     </div>
                     
-                    <!-- single item -->
+                    <!-- single item --> <!-- Cart -->
                     <div id="cart-info" class="nav-info align-items-center cart-info d-flex justify-content-between mx-lg-5">
-                        <span class="cart-info-icon mx-lg-3">
+                        <span class="cart-info-icon mr-lg-3">
                             <i class="fas fa-shopping-cart"></i>
                         </span>
                         <p class="text-capitalize mb-0">
-                            <span id="item-count">2</span>
-                            items - £
-                            <span class="item-total">10.49</span>
+                            <span id="item-count">2</span> items - £<span class="item-total">10.49</span>
                         </p>
                     </div>
                 </div>
             </div>  
         </nav>
-         
+        
+        <!-- Banner Section-->
+        <div class="container-fluid">
+            <div class="row banner justify-content-center align-items-center">
+                <div class="col-10 mx-auto banner-info text-center">
+                    <h1 class="text-capitalize">welcome to <strong class="banner-title">rice yum!</strong></h1>
+                    <a href="#products" class="btn banner-link text-uppercase  my-2">explore</a>
+                </div>
+            </div>
+        </div>
+
     </header>
-    
+
+    <!-- About Section -->
+    <section id="about" class="about py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-10 mx-auto col-md-6 my-5">
+                    <h2 class="text-capitalize">about <strong class="banner-title">us</strong></h2>
+                    <p class="my-4 w-75 text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ex maiores aut, officiis sit officia impedit provident omnis rerum explicabo aperiam itaque reiciendis doloremque unde suscipit nemo. Fugiat, facilis hic?</p>
+                    <a href="#products" class="btn btn-black text-uppercase">explore</a>
+                </div>
+                <div class="col-10 mx-auto col-md-6 my-5">
+                    <div class="about-img-container">
+                        <img src="./imgs/display-img/rice-1.jpg" alt="cooked rice" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    <!-- Products -->
+    <section id="products">
+        <div class="container">
+            <div class="row">
+                <div class="col-10 mx-auto col-xs-6 text-center">
+                    <h2 class="text-capitalize">our <strong class="banner-title">products</strong></h2>
+                </div>
+            </div>
+            
+        </div>
+    </section>
 </body>
 </html>
