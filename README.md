@@ -1,3 +1,3 @@
 # Online Shop Template #
 - A simple shopping website that has a functional cart.
-- Created with pure HTML, CSS & JS
+- Created with HTML, CSS, Bootstrap & JavaScript
