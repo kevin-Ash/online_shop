@@ -25,14 +25,7 @@
             <a href="#main-header" class="navbar-brand"> 
                 <img src="./imgs/icons/rice-icon.svg" class="img-fluid" alt="main logo"/>
             </a>
-           
-             <!-- Hamburger Toggle Button-->
-            <button class="navbar-toggler" data-toggle="collapse" data-target="#main-navigation">
-                <span class="navbar-toggler-icon d-flex align-items-center justify-content-center">
-                    <i class="fas fa-bars"></i>
-                </span>
-            </button>
-            
+                       
             <!-- Main Navigation Links-->
             <div class="collapse navbar-collapse" id="main-navigation">
                 <ul class="navbar-nav text-capitalize mx-auto">
@@ -49,9 +42,9 @@
                         <a href="#contact" class="nav-link">contact</a>
                     </li>
                 </ul>
-
+            </div>
                 <!-- Info Items in Nav -->
-                <div class="nav-main-info d-none d-lg-flex">
+                <div class="nav-main-info d-lg-flex">
                     <!-- single item--> <!-- Phone Number -->
                     <div class="nav-info align-items-center d-flex justify-content-between mx-lg-5">
                         <span class="info-icon mx-lg-3">
@@ -62,7 +55,7 @@
                     
                     <!-- single item --> <!-- Cart -->
                     <div id="cart-info" class="nav-info align-items-center cart-info d-flex justify-content-between mx-lg-5">
-                        <span class="cart-info-icon mr-lg-3">
+                        <span class="cart-info-icon mx-2">
                             <i class="fas fa-shopping-cart"></i>
                         </span>
                         <p class="text-capitalize mb-0">
@@ -70,7 +63,14 @@
                         </p>
                     </div>
                 </div>
-            </div>  
+
+                <!-- Hamburger Toggle Button-->
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#main-navigation">
+                <span class="navbar-toggler-icon d-flex align-items-center justify-content-center">
+                    <i class="fas fa-bars"></i>
+                </span>
+            </button>
+             
         </nav>
         
         <!-- Banner Section-->
@@ -268,14 +268,16 @@
                           <legend >contact us</legend>
                           <div class="form-group">
                             <label for="input-email">Email address</label>
-                            <input type="email" class="form-control" id="input-email"  placeholder="Enter email">
-                            <p id="email-help" class="form-text">We'll never share your email with anyone else.</small>
+                                <input type="email" class="form-control" id="input-email"  placeholder="Enter email">
+                                <p id="email-help" class="form-text">We'll never share your email with anyone else.</p>
                           </div>                          
                           <div class="form-group">
-                            <label for="input-text">your message</label>
-                            <textarea class="form-control" id="input-text" rows="5" placeholder="Enter your message"></textarea>
+                                <label for="input-text">your message</label>
+                                <textarea class="form-control" id="input-text" rows="5" placeholder="Enter your message"></textarea>
                           </div>
-                          <button type="submit" class="btn btn-black"><span class="btn-font">Submit</span></button>
+                          <button type="submit" class="btn btn-black">
+                              <span class="btn-font">Submit</span>
+                            </button>
                         </fieldset>
                       </form>
                 </div>
