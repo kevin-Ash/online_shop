@@ -75,6 +75,10 @@ nav {
     background: rgba(255, 255, 255, 0.65);
     
 }
+.nav-main-info p{
+    font-size: 5vw!important;
+}
+
 .navbar-brand img {
     width: 3.75rem;
     height: 3.75rem;

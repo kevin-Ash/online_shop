@@ -15,7 +15,7 @@
     <!-- Font Awesome CDN -->
     <script src="https://kit.fontawesome.com/d027480c9c.js" crossorigin="anonymous" defer></script> 
     <!-- Custom JS -->   
-    <script src="./open-cart.js" defer></script>
+    <script src="./shop.js" defer></script>
 </head>
 <body>
     <!-- Header Section -->
@@ -31,10 +31,10 @@
             <div class="nav-main-info d-lg-flex">
                 <!-- single item--> <!-- Phone Number -->
                 <div class="nav-info align-items-center d-flex justify-content-between mx-lg-5">
-                    <span class="info-icon mx-lg-3">
+                    <span class="info-icon mx-lg-3 d-none d-sm-block">
                         <i class="fas fa-phone"></i>
                     </span>
-                    <p class="mb-0">+ 012345 67890</p>
+                    <p class="d-none d-sm-block mb-0">+ 012345 67890</p>
                 </div>
                 
                 <!-- single item --> <!-- Cart -->
@@ -42,15 +42,17 @@
                     <span class="cart-info-icon mx-2">
                         <i class="fas fa-shopping-cart"></i>
                     </span>
-                    <p class="text-capitalize mb-0">
-                        <span id="item-count">2</span> items - £<span class="item-total">10.49</span>
+                    <p class="text-capitalize mb-0 d-none d-sm-block>
+                        <span id="item-count">2</span> 
+                        items - £
+                        <span class="item-total">10.49</span>
                     </p>
                 </div>
 
             </div>
 
-             <!-- Hamburger Toggle Button-->
-             <button class="navbar-toggler" data-toggle="collapse" data-target="#main-navigation">
+            <!-- Hamburger Toggle Button-->
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#main-navigation">
                 <span class="navbar-toggler-icon d-flex align-items-center justify-content-center">
                     <i class="fas fa-bars"></i>
                 </span>
@@ -74,6 +76,7 @@
                 </ul>
             </div>
            
+            
             
         </nav>
         
