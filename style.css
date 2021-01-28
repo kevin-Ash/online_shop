@@ -34,17 +34,17 @@ h1 {
     font-family: var(--h1Font);
     text-shadow: 0 0 3px var(--mainGrey), 0 0 5px var(--mainGrey);
 }
-h2,h3,h4,h5,legend,label {
+h2,h3,h4,h5,legend,label,a {
     font-family: var(--h2Font);
 }
-a, p {
+p {
     font-family: var(--pFont);
 }
 li {
     list-style-type: none;
 }
 .btn-red {
-    color: var(--mainRed)!important;
+    color: var(--mainGrey)!important;
     border-color: var(--mainRed)!important;
 }
 .btn-red:hover {
@@ -60,13 +60,20 @@ li {
     background-color: var(--mainGrey)!important;
 }
 .btn-font {
-    font-family: var(--pFont);
+    font-family: var(--h2Font);
 }
+.cart-img {
+    height: 4rem;
+    width: 4rem;
+}
+
 /* 
 Main Navigation 
 */
 nav {
     border-bottom: 0.15rem solid var(--mainLime);
+    background: rgba(255, 255, 255, 0.65);
+    
 }
 .navbar-brand img {
     width: 3.75rem;
@@ -251,3 +258,38 @@ Footer Section
     font-size: 2.2rem;
     color: var(--mainGrey);
 }
+
+/*
+Open Cart
+*/
+.open-cart {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 2rem;
+    background-color: var(--mainWhite);
+    z-index: 1;
+    box-shadow: 5px 5px 15px;
+    transition: var(--mainTransition);
+    border-bottom: 0.15rem solid var(--mainLime);
+    border-radius: 0.15rem;
+    display: none;
+}
+.cart-item-btn {
+    margin: 0.5rem 0.75rem;
+}
+.cart-item-remove {
+    color: var(--mainGrey);
+    transition: var(--mainTransition);
+    font-size: 1.25rem;
+}
+.cart-item-remove:hover {
+    color: var(--mainRed);
+}
+.item-text {
+    font-family: var(--pFont);
+}
+/* Show class with JS */
+.display-cart {
+   display: block;
+}  

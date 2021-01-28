@@ -13,18 +13,48 @@
     <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <!-- Font Awesome CDN -->
-    <script src="https://kit.fontawesome.com/d027480c9c.js" crossorigin="anonymous" defer></script>    
+    <script src="https://kit.fontawesome.com/d027480c9c.js" crossorigin="anonymous" defer></script> 
+    <!-- Custom JS -->   
+    <script src="./open-cart.js" defer></script>
 </head>
 <body>
     <!-- Header Section -->
     <header id="main-header">
         
-        <!-- Navbar -->
+        <!-- Navbar --><!-- fixed-top ?-->
         <nav class="navbar navbar-expand-lg px-4">
             <!-- Brand Logo -->
             <a href="#main-header" class="navbar-brand"> 
                 <img src="./imgs/icons/rice-icon.svg" class="img-fluid" alt="main logo"/>
             </a>
+            <!-- Info Items in Nav -->
+            <div class="nav-main-info d-lg-flex">
+                <!-- single item--> <!-- Phone Number -->
+                <div class="nav-info align-items-center d-flex justify-content-between mx-lg-5">
+                    <span class="info-icon mx-lg-3">
+                        <i class="fas fa-phone"></i>
+                    </span>
+                    <p class="mb-0">+ 012345 67890</p>
+                </div>
+                
+                <!-- single item --> <!-- Cart -->
+                <div id="cart-info" class="nav-info align-items-center cart-info d-flex justify-content-between mx-lg-5">
+                    <span class="cart-info-icon mx-2">
+                        <i class="fas fa-shopping-cart"></i>
+                    </span>
+                    <p class="text-capitalize mb-0">
+                        <span id="item-count">2</span> items - £<span class="item-total">10.49</span>
+                    </p>
+                </div>
+
+            </div>
+
+             <!-- Hamburger Toggle Button-->
+             <button class="navbar-toggler" data-toggle="collapse" data-target="#main-navigation">
+                <span class="navbar-toggler-icon d-flex align-items-center justify-content-center">
+                    <i class="fas fa-bars"></i>
+                </span>
+            </button> 
                        
             <!-- Main Navigation Links-->
             <div class="collapse navbar-collapse" id="main-navigation">
@@ -43,34 +73,8 @@
                     </li>
                 </ul>
             </div>
-                <!-- Info Items in Nav -->
-                <div class="nav-main-info d-lg-flex">
-                    <!-- single item--> <!-- Phone Number -->
-                    <div class="nav-info align-items-center d-flex justify-content-between mx-lg-5">
-                        <span class="info-icon mx-lg-3">
-                            <i class="fas fa-phone"></i>
-                        </span>
-                        <p class="mb-0">+ 012345 67890</p>
-                    </div>
-                    
-                    <!-- single item --> <!-- Cart -->
-                    <div id="cart-info" class="nav-info align-items-center cart-info d-flex justify-content-between mx-lg-5">
-                        <span class="cart-info-icon mx-2">
-                            <i class="fas fa-shopping-cart"></i>
-                        </span>
-                        <p class="text-capitalize mb-0">
-                            <span id="item-count">2</span> items - £<span class="item-total">10.49</span>
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Hamburger Toggle Button-->
-            <button class="navbar-toggler" data-toggle="collapse" data-target="#main-navigation">
-                <span class="navbar-toggler-icon d-flex align-items-center justify-content-center">
-                    <i class="fas fa-bars"></i>
-                </span>
-            </button>
-             
+           
+            
         </nav>
         
         <!-- Banner Section-->
@@ -80,6 +84,52 @@
                     <h1 class="text-capitalize">welcome to <strong class="banner-title">rice yum!</strong></h1>
                     <a href="#products" class="btn banner-link text-uppercase  my-2">explore</a>
                 </div>
+
+                <!-- Open Cart -->
+            <div class="open-cart" id="open-cart">
+                
+                <!-- single cart item -->
+                <div class="cart-item d-flex justify-content-between text-capitalize my-3">
+                    <img src="./imgs/display-img/rice-meal-1.jpg" alt="" class="img-fluid rounded-circle cart-img" id="item-img">
+                
+                <div class="item-text">
+                    <p id="cart-item-title mb-0">cart-item</p>
+                    <span>£</span>
+                <span id="cart-item-price" class="cart-item-price mb-0">10.99</span>
+                </div>
+                
+                <a href="#" class="cart-item-remove" id="cart-item-remove">
+                    <i class="fas fa-trash"></i>
+                </a>
+            </div>
+
+              <!-- single cart item -->
+            <div class="cart-item d-flex justify-content-between text-capitalize my-3">
+                <img src="./imgs/display-img/rice-meal-2.jpg" alt="" class="img-fluid rounded-circle cart-img" id="item-img">
+            
+                <div class="item-text">
+                    <p id="cart-item-title">cart-item</p>
+                    <span>£</span>
+                <span id="cart-item-price" class="cart-item-price">10.99</span>
+                </div>
+                
+                <a href="#" class="cart-item-remove" id="cart-item-remove">
+                    <i class="fas fa-trash"></i>
+                </a>
+            </div>
+
+            <!-- Total -->
+            <div class="cart-total d-flex justify-content-around text-capitalize mt-5" id="cart-total">
+                <h5>total</h5>
+                <h5>£<strong id="cart-total" class="font-weight-bol">10.00</strong></h5>
+            </div>
+
+            <!-- Open Cart Buttons -->
+           <div class="d-flex justify-content-between mt-3 text-uppercase">
+               <a href="#" class="btn btn-black cart-item-btn">checkout</a>
+                <a href="" class="btn btn-red cart-item-btn">clear cart</a>
+            </div>
+        </div>
             </div>
         </div>
 
@@ -114,7 +164,7 @@
                 </div>
             </div>
             
-            <!-- Sort Items -->
+            <!-- Sort Buttons -->
             <div class="row">
                 <div class="col-lg-8 mx-auto d-flex justify-content-around sortBtn flex-wrap">
                     <a href="#" class="btn btn-black text-uppercase filter-btn m-2"  data-filter="all">all</a>
@@ -124,7 +174,7 @@
                 </div>
             </div>
             
-            <!-- Search Items -->
+            <!-- Search Input -->
             <div class="row">
                 <div class="col-10 mx-auto col-md-6">
                     <form action="">
@@ -143,7 +193,7 @@
         
         <!-- Product Items -->
         <div class="container">
-            <div class="row product-items" id="product-items">
+            <div class="row product-items py-5" id="product-items">
 
                 <!-- single item -->
                 <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 product-item food-item" data-item="food-item">
