@@ -274,6 +274,7 @@ Open Cart
     transition: var(--mainTransition);
     border-bottom: 0.15rem solid var(--mainLime);
     border-radius: 0.15rem;
+    width: 30vw;
     display: none;
 }
 .cart-item-btn {
