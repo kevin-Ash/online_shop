@@ -88,7 +88,29 @@ IIFE to seperate concerns
         })
     });
 
+    function showTotal() {
+        const total = [];
+        const items = document.querySelectorAll('.cart-item-price');
 
+        items.forEach((item) => {
+            total.push(parseFloat(item.textContent));
+        });
+
+        //console.log(total);
+
+        // Price Sum
+        const money = total.reduce((total,item) => {
+            total += item;
+            return total
+            
+        })
+        const finalMoney = money.toFixed(2);
+        // console.log(finalMoney);
+
+        document.getElementById('cart-total').textContent = finalMoney;
+        document.querySelector('.item-total').textContent = finalMoney
+        document.getElementById('item-count').textContent = total.length;
+    }
 
 
 })();
