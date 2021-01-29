@@ -13,7 +13,7 @@ Variables
 :root {
     --h1Font: 'Fira Sans', sans-serif;
     --h2Font: 'Raleway', sans-serif;
-    --pFont: 'Taviraj', serif;
+    --pFont: 'Raleway', sans-serif;
     --mainGrey: #302b27;
     --mainWhite: #f5f3f5;
     --mainLime: #c6f91f;
@@ -266,7 +266,7 @@ Open Cart
 .open-cart {
     position: absolute;
     right: 0;
-    top: 0;
+    top: 87px;
     padding: 2rem;
     background-color: var(--mainWhite);
     z-index: 1;

@@ -1,3 +1,6 @@
+// Make DOM cache?
+const openCart = document.getElementById('open-cart');
+
 /*
 IIFE to seperate concerns
 */
@@ -5,7 +8,7 @@ IIFE to seperate concerns
 // SHOW CART 
 (function(){
     const cartBtn= document.getElementById('cart-info');
-    const openCart = document.getElementById('open-cart');
+    
     
     cartBtn.addEventListener('click', displayCart);
     
@@ -18,6 +21,7 @@ IIFE to seperate concerns
 (function(){
     const addTocartBtn = document.querySelectorAll('.product-item-icon');
 
+    // For Each btn in DOM
     addTocartBtn.forEach((btn) => {
         btn.addEventListener('click', (event) => {
             
@@ -27,24 +31,64 @@ IIFE to seperate concerns
                 let cartImgUrl = event.target.parentElement.previousElementSibling.src
 
                 // Create obj to store cart details
-                const cartItemObj = {}
+                const cartItemObj = {};
+
+                // Add img property to obj
                 cartItemObj.img = cartImgUrl;
-              
 
+                // Add name
                 let cartItemName = event.target.parentElement.parentElement.nextElementSibling.children[0].children[0].textContent;
-
-                let cartItemPrice = event.target.parentElement.parentElement.nextElementSibling.children[0].children[1].textContent;
-
-
                 cartItemObj.name = cartItemName;
 
-                console.log(
-                    cartImgUrl,
-                    cartItemName,
-                    cartItemPrice );
-                
-            }
+                // Add price
+                let cartItemPrice = event.target.parentElement.parentElement.nextElementSibling.children[0].children[1].textContent;
 
+                // Format for numbers
+                let newPrice = cartItemPrice.slice(1);
+                cartItemObj.price = newPrice;
+
+                /**
+                 * Display to UI
+                 */
+
+                // Create div element to display cart-item to DOM
+                const productItem = document.createElement('div');
+                productItem.classList.add(
+                    'cart-item', 
+                    'd-flex', 
+                    'justify-content-between', 
+                    'text-capitalize', 
+                    'my-3'
+                );
+            
+                // Add HTML to productItem div
+                productItem.innerHTML =
+
+                `<!-- single cart item -->
+                <!-- <div class="cart-item d-flex justify-content-between text-capitalize my-3"> -->
+                    <img src="${cartImgUrl}" alt="" class="img-fluid rounded-circle cart-img" id="item-img">
+                
+                    <div class="item-text">
+                        <p id="cart-item-title">${cartItemName}</p>
+                        <span>£</span>
+                    <span id="cart-item-price" class="cart-item-price">${newPrice}</span>
+                    </div>
+                    
+                    <a href="#" class="cart-item-remove" id="cart-item-remove">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                <!-- </div> -->`;
+               
+                const total = document.querySelector('.cart-total')
+                // Insert before total div instead of append - like slice for DOM?
+                openCart.insertBefore(productItem, total);
+                // When each button is clicked update total
+                showTotal();               
+            }
         })
     });
+
+
+
+
 })();
