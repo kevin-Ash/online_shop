@@ -6,13 +6,13 @@ IIFE to seperate concerns
 */
 
 // SHOW CART 
-(function(){
+(function(displayCart){
     const cartBtn= document.getElementById('cart-info');
     
     
     cartBtn.addEventListener('click', displayCart);
     
-    function displayCart() {
+    const displayCart = function displayCart() {
         openCart.classList.toggle('display-cart');
     }
 })();
