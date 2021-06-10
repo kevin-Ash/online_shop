@@ -11,7 +11,6 @@
 - Used immediately invoked function expressions to seperate concerns addressed
 
 ## Improvements Considered ##
-- Functional porgramming approach to button click?
 - Add validation to contact form
 - Hover effects on social icons?
 - Convert to React single page app?
