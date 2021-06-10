@@ -290,7 +290,8 @@ Open Cart
 .item-text {
     font-family: var(--pFont);
 }
-/* Show class with JS */
+
+/* Show class with JS - via toggle on DOM method */
 .display-cart {
    display: block;
 }  

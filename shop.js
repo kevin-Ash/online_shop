@@ -1,10 +1,6 @@
 // Make DOM cache?
 const openCart = document.getElementById('open-cart');
 
-/*
-IIFE to seperate concerns
-*/
-
 // SHOW CART 
 (function(){ // IIFE
     
@@ -89,6 +85,7 @@ IIFE to seperate concerns
     });
 
     function showTotal() {
+        // Initialise empty total array
         const total = [];
         const items = document.querySelectorAll('.cart-item-price');
 
@@ -96,7 +93,7 @@ IIFE to seperate concerns
             total.push(parseFloat(item.textContent));
         });
 
-        //console.log(total);
+        // console.log(total);
 
         // Price Sum
         const money = total.reduce((total,item) => {
@@ -114,3 +111,5 @@ IIFE to seperate concerns
 
 
 })();
+
+// CONTACT SECTION VALIDATION
