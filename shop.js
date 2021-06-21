@@ -1,38 +1,43 @@
 // Make DOM cache?
 const openCart = document.getElementById('open-cart');
 
-// SHOW CART 
+// REVEAL / SHOW CART 
 (function(){ // IIFE
     
     const cartBtn= document.getElementById('cart-info');
     
+    // add click event to cart reveal button
     cartBtn.addEventListener('click', displayCart);
-    
+
     function displayCart() {
+        // toggle css class to change to display cart
         openCart.classList.toggle('display-cart');
     }
+
 })();
 
-// ADD ITEMS TO CART
-(function(){
+// ADDING ITEMS TO CART
+(function(){ //IIFE
+
     const addTocartBtn = document.querySelectorAll('.product-item-icon');
 
-    // For Each btn in DOM
+    // For Each product item icon btn in DOM
     addTocartBtn.forEach((btn) => {
         btn.addEventListener('click', (event) => {
             
+            // If DOM element 
             if(event.target.parentElement.classList.contains('product-item-icon')){
 
-                // Traverse DOM to get img url
+                // Traverse DOM to get img url source
                 let cartImgUrl = event.target.parentElement.previousElementSibling.src
 
-                // Create obj to store cart details
+                // Create empty obj to store cart details
                 const cartItemObj = {};
 
-                // Add img property to obj
+                // Add img property to object
                 cartItemObj.img = cartImgUrl;
 
-                // Add name
+                // In similar fashion, add name
                 let cartItemName = event.target.parentElement.parentElement.nextElementSibling.children[0].children[0].textContent;
                 cartItemObj.name = cartItemName;
 
@@ -47,8 +52,9 @@ const openCart = document.getElementById('open-cart');
                  * Display to UI
                  */
 
-                // Create div element to display cart-item to DOM
+                // Create a new div element to display cart-item to DOM
                 const productItem = document.createElement('div');
+                // Add classes to product item div for appropriate styling
                 productItem.classList.add(
                     'cart-item', 
                     'd-flex', 
@@ -57,9 +63,8 @@ const openCart = document.getElementById('open-cart');
                     'my-3'
                 );
             
-                // Add HTML to productItem div
+                // Add HTML template string to productItem div
                 productItem.innerHTML =
-
                 `<!-- single cart item -->
                 <!-- <div class="cart-item d-flex justify-content-between text-capitalize my-3"> -->
                     <img src="${cartImgUrl}" alt="" class="img-fluid rounded-circle cart-img" id="item-img">
