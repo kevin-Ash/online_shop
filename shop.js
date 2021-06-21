@@ -118,3 +118,6 @@ const openCart = document.getElementById('open-cart');
 })();
 
 // CONTACT SECTION VALIDATION
+(function(){
+    
+})();
